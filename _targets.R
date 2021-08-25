@@ -33,10 +33,9 @@ p1_targets_list <- list(
     download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01466500.csv'),
     format = "file"
   ),
-  tar_target(in_dir,'1_fetch/out/nwis_data',format ="file"),
   tar_target(
     combined_nwis_data,
-    combine_data(in_dir),
+    combine_data(c(site_data_01427207_csv, site_data_01432160_csv, site_data_01435000_csv, site_data_01436690_csv, site_data_01466500_csv)),
   ),
   tar_target(
     site_info_csv,

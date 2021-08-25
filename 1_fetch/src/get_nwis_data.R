@@ -3,9 +3,8 @@
 # -----------------------
 
 # load all files in download directory and combine into a dataframe
-combine_data <- function(in_dir) {
+combine_data <- function(download_files) {
   
-  download_files <- list.files(in_dir, full.names = TRUE)
   data_out <- data.frame()
   # loop through files to download 
   for (download_file in download_files){
