@@ -5,7 +5,6 @@ source("3_visualize/src/plot_timeseries.R")
 
 options(tidyverse.quiet = TRUE)
 tar_option_set(packages = c("tidyverse", "dataRetrieval")) # Loading tidyverse because we need dplyr, ggplot2, readr, stringr, and purrr
-nwis_sites = c("01427207", "01432160", "01435000", "01436690", "01466500")
 
 # Download NWIS data and site info
 p1_targets_list <- list(
@@ -41,7 +40,7 @@ p1_targets_list <- list(
   ),
   tar_target(
     site_info_csv,
-    nwis_site_info(fileout = "1_fetch/out/site_info.csv", nwis_sites),
+    nwis_site_info(fileout = "1_fetch/out/site_info.csv", combined_nwis_data),
     format = "file"
   )
 )

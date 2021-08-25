@@ -5,7 +5,7 @@
 # load all files in download directory and combine into a dataframe
 combine_data <- function(in_dir) {
   
-  download_files <- file.path(in_dir,list.files(in_dir))
+  download_files <- list.files(in_dir, full.names = TRUE)
   data_out <- data.frame()
   # loop through files to download 
   for (download_file in download_files){
@@ -20,8 +20,8 @@ combine_data <- function(in_dir) {
 # ----------------------
 
 # Download site information for provided NWIS site numbers
-nwis_site_info <- function(fileout, site_no){
-  #site_no <- unique(site_data$site_no)
+nwis_site_info <- function(fileout, site_data){
+  site_no <- unique(site_data$site_no)
   site_info <- dataRetrieval::readNWISsite(site_no)
   write_csv(site_info, fileout)
   return(fileout)
