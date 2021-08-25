@@ -2,21 +2,6 @@
 
 # -----------------------
 
-# download data from nwis for given site numbers and save as .csv files in output folder
-download_nwis_data <- function(site_nums, 
-                               out_path,
-                               params = '00010'){
-  
-  # create the file names that are needed for download_nwis_site_data
-
-  download_file <- file.path(out_path, paste0('nwis_', site_nums, '_data.csv'))
-  download_nwis_site_data(download_file, parameterCd = params)
-  
-  return(download_file) 
-}
- 
-# ----------------------
-
 # load all files in download directory and combine into a dataframe
 combine_data <- function(in_dir) {
   

@@ -10,24 +10,29 @@ nwis_sites = c("01427207", "01432160", "01435000", "01436690", "01466500")
 # Download NWIS data and site info
 p1_targets_list <- list(
   tar_target(
-    site_data_01427207,
-    download_nwis_data(nwis_sites[1],'1_fetch/out/nwis_data/'),
+    site_data_01427207_csv,
+    download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01427207.csv'),
+    format = "file"
   ),
   tar_target(
-    site_data_01432160,
-    download_nwis_data(nwis_sites[2],'1_fetch/out/nwis_data/'),
+    site_data_01432160_csv,
+    download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01432160.csv'),
+    format = "file"
   ),
   tar_target(
-    site_data_01435000,
-    download_nwis_data(nwis_sites[3],'1_fetch/out/nwis_data/'),
+    site_data_01435000_csv,
+    download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01435000.csv'),
+    format = "file"
   ),
   tar_target(
-    site_data_01436690,
-    download_nwis_data(nwis_sites[4],'1_fetch/out/nwis_data/'),
+    site_data_01436690_csv,
+    download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01436690.csv'),
+    format = "file"
   ),
   tar_target(
-    site_data_01466500,
-    download_nwis_data(nwis_sites[5],'1_fetch/out/nwis_data/'),
+    site_data_01466500_csv,
+    download_nwis_site_data('1_fetch/out/nwis_data/nwis_data_01466500.csv'),
+    format = "file"
   ),
   tar_target(in_dir,'1_fetch/out/nwis_data',format ="file"),
   tar_target(
