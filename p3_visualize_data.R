@@ -1,8 +1,5 @@
 source("3_visualize/src/plot_timeseries.R")
 
-tar_option_set(packages = c("tidyverse", "dataRetrieval")) # Loading tidyverse because we need dplyr, ggplot2, readr, stringr, and purrr
-
-
 # plot data
 p3_targets_list <- list(
   tar_target(
